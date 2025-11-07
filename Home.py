@@ -93,7 +93,12 @@ with col2:
             last_updated = datetime.utcfromtimestamp(wx["dt"]).strftime("%Y-%m-%d %H:%M UTC") if wx.get("dt") else "—"
             colA, colB, colC = st.columns(3)
             with colA:
-                st.metric(label=f"Temperature {wx['emoji']}", value=f\"{wx['temp']:.1f}°C\" if wx['temp'] is not None else "—", delta=f\"Feels {wx['feels_like']:.1f}°C\" if wx['feels_like'] is not None else "")
+                st.metric(
+    label=f"Temperature {wx['emoji']}",
+    value=f"{wx['temp']:.1f}°C" if wx['temp'] is not None else "—",
+    delta=f"Feels {wx['feels_like']:.1f}°C" if wx['feels_like'] is not None else ""
+)
+
             with colB:
                 st.metric(label="Humidity", value=f\"{wx['humidity']}%\" if wx['humidity'] is not None else "—")
             with colC:
