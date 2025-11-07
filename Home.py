@@ -105,17 +105,17 @@ with col2:
             with colC:
                 st.metric(label="Rain (1h)", value=f"{wx['rain'] or 0} mm")
 
-            st.caption(f\"{wx['desc']} · Updated: {last_updated}\")
-            if refresh:
-                st.cache_data.clear()
-                st.experimental_rerun()
-        except Exception as e:
-            st.warning(\"⚠️ Unable to fetch live weather right now. Please try again later.\")
+            st.caption(f"{wx['desc']} · Updated: {last_updated}")
+if refresh:
+    st.cache_data.clear()
+    st.experimental_rerun()
+except Exception as e:
+    st.warning("⚠️ Unable to fetch live weather right now. Please try again later.")
 
 
-    if st.button("➡️ Proceed to Method Selection"):
-        st.experimental_set_query_params(page="1_Method_Selection")
-        st.switch_page("pages/1_Method_Selection.py")
+if st.button("➡️ Proceed to Method Selection"):
+    st.experimental_set_query_params(page="1_Method_Selection")
+    st.switch_page("pages/1_Method_Selection.py")
 
 # ----------- Page Navigation -------------
 if page_choice == "📘 Method Selection":
@@ -126,3 +126,4 @@ elif page_choice == "📈 Strangers Method":
     st.switch_page("pages/3_Strangers_Method.py")
 elif page_choice == "📊 Runoff Result":
     st.switch_page("pages/4_Runoff_Result.py")
+
