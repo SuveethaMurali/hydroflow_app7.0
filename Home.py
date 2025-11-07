@@ -100,7 +100,8 @@ with col2:
 )
 
             with colB:
-                st.metric(label="Humidity", value=f\"{wx['humidity']}%\" if wx['humidity'] is not None else "—")
+                st.metric(label="Humidity", value=f"{wx['humidity']}%" if wx['humidity'] is not None else "—")
+
             with colC:
                 st.metric(label="Rain (1h)", value=f\"{wx['rain'] or 0} mm\")
             st.caption(f\"{wx['desc']} · Updated: {last_updated}\")
