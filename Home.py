@@ -105,17 +105,6 @@ with col2:
         except Exception as e:
             st.warning(\"⚠️ Unable to fetch live weather right now. Please try again later.\")
 
-    st.markdown(\"---\")
-    st.subheader(\"👩‍💻 Developed By\")
-    st.write(
-        \"\"\"
-        - **Suveetha M**  
-        - **Vishnu Sri M**  
-        - **Sangeetha R**  
-        Under the guidance of **[Your Guide’s Name]**  
-        Department of Civil Engineering, [Your College Name]
-        \"\"\"
-    )
 
     if st.button("➡️ Proceed to Method Selection"):
         st.experimental_set_query_params(page="1_Method_Selection")
