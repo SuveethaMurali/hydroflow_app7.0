@@ -118,7 +118,7 @@ with col2:
                 st.switch_page("pages/1_Method_Selection.py")
 
 # ----------- Page Navigation -------------
-   if page_choice == "📘 Method Selection":
+if page_choice == "📘 Method Selection":
     st.switch_page("pages/1_Method_Selection.py")
 elif page_choice == "🌀 SCN Method":
     st.switch_page("pages/2_SCN_Method.py")
